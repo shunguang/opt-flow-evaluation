@@ -1,0 +1,48 @@
+<?xml version="1.i0" encoding="utf-8"?>
+<cfg>
+  <of>
+    <!--ofTestSuite: 0 - for 1frm; 1- multi frm; otherwise timing evaluation /-->
+    <ofTestSuite>0</ofTestSuite>
+
+    <!-- alg: OF_LK_SPARSE_CV_CPU=0,	OF_LK_SPARSE_CV_GPU,	OF_LK_SPARSE_NV_VPI,	OF_UTILS  /-->
+    <alg>1</alg>
+
+    <isForVincentDataSet>0</isForVincentDataSet>
+
+    <!-- nv_vpi_backend: cpu or cuda-->
+    <nv_vpi_backend>cuda</nv_vpi_backend>
+
+    <inputImgDir>../../dataset/car</inputImgDir>
+    <inputImgFileExt>png</inputImgFileExt>
+    <inputImgGray>0</inputImgGray>
+
+    <inputImgW>720</inputImgW>  
+		<inputImgH>1280</inputImgH>  
+
+    <numFramesToProcess>100</numFramesToProcess>
+
+    <initFeaturePts>100</initFeaturePts>
+
+    <isShowFlowImg>1</isShowFlowImg>
+    <isDumpFlowImg>0</isDumpFlowImg>
+    <outputImgDir>.</outputImgDir>
+
+
+		<!--resizedImgW: -1 do not resize input image  -->  
+		<resizedImgW>-1</resizedImgW>  
+		<resizedImgH>-1</resizedImgH>  
+		
+    <!--useGray: 0 - do not use gray to calcluate flow, otherwise - use color image  -->  
+		<useGray>1</useGray>  
+		<winSize>21</winSize>  
+		<!--winSize>3 or 5 </winSize for Vincent data set-->  
+		<!--winSize>21</winSize-->  
+		<maxPyrLevel>3</maxPyrLevel>  
+		<iters>30</iters>  
+    <epsilon>0.03</epsilon>
+
+		<!--createGoodFeaturesToTrackDetector params -->  
+		<maxFeaturePoints>100</maxFeaturePoints>  
+		<minFeaturePointDist>10</minFeaturePointDist>  
+  </of>
+</cfg>
