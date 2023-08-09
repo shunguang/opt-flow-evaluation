@@ -1,10 +1,8 @@
 # opt-flow-evaluation (OFE) - (8/8/23)
        
-An open source project to evaluate the following three sparse optical flow algorithms
-(1) cv::calcOpticalFlowPyrLK()
-(2) cv::cuda::SparsePyrLKOpticalFlow()
-(3) vpiSubmitOpticalFlowPyrLK()
-In order to easily describe the following sections, let's define an env var:
+An open source project to evaluate the following three sparse optical flow algorithms: 
+(1) cv::calcOpticalFlowPyrLK(), (2) cv::cuda::SparsePyrLKOpticalFlow(), and (3) vpiSubmitOpticalFlowPyrLK().
+In order to conveniently describe the following sections, let's define an env var:
 ***OFE_ROOT=~/opt-flow-evaluation***
 ## dataset
 	There are three datasets at $(OFE_ROOT)/dataset folder: car, cars, and street. Each of them has two subfolders:fpt and img, fpt stands for feature points and img for images. For example:
@@ -29,7 +27,7 @@ In order to easily describe the following sections, let's define an env var:
 	   (2) go into $(OFE_ROOT)/src/makeFiles, then run
 	      $make -f Makefile_util.mak
 	      $make -f Makefile_test.mak
-	   The building results will be at: $(OFE_ROOT)/build
+	   The building results will be at: ***$(OFE_ROOT)/build***
 ## How to run
        (1) cfg files: there are three predefined configuration files at folder
            $(OFE_ROOT)/src/test/cfg
