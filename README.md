@@ -29,7 +29,7 @@ In order to easily describe the following sections, let's define an env var:
 	   (2) go into $(OFE_ROOT)/src/makeFiles, then run
 	      $make -f Makefile_util.mak
 	      $make -f Makefile_test.mak
-	   The building results will be at  ***$(OFE_ROOT)/build***
+	   The building results will be at: $(OFE_ROOT)/build
 ## How to run
        (1) cfg files: there are three predefined configuration files at folder
            $(OFE_ROOT)/src/test/cfg
