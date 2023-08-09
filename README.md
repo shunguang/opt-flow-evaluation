@@ -35,6 +35,9 @@ In order to conveniently describe the following sections, let's define an env va
        (2) to run it
            a) goto $(OFE_ROOT)/build/bin, then run
            b) $./test.out ../../src/test/cfg/cfg-opt-flow-car.xml
+## Plot the results
+	The matlab scripts at  $(OFE_ROOT)/src/matlab can be used to plot the figures posted at 
+ **[here](https://forums.developer.nvidia.com/t/accuracy-of-nv-vpi-sparse-optical-flow-on-orin/262329)**
 ## More info
    goto nvidia developer forum discussion page:  <https://forums.developer.nvidia.com/t/accuracy-of-nv-vpi-sparse-optical-flow-on-orin/262329>
 
