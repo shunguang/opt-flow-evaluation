@@ -38,8 +38,8 @@ In order to easily describe the following sections, let's define an env var:
            a) goto $(OFE_ROOT)/build/bin
            b) $./test.out ../../src/test/cfg/cfg-opt-flow-car.xml
 ## More info
-   (1) nvidia developer forum discussion page:  <https://forums.developer.nvidia.com/t/accuracy-of-nv-vpi-sparse-optical-flow-on-orin/262329>
-   (2) Brief report:  $(OFE_ROOT)/doc/opt-flow-evaluation.pdf
+   goto nvidia developer forum discussion page:  <https://forums.developer.nvidia.com/t/accuracy-of-nv-vpi-sparse-optical-flow-on-orin/262329>
+
    
 
        
