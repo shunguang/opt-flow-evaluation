@@ -4,7 +4,7 @@ An open source project to evaluate the following three sparse optical flow algor
 (1) cv::calcOpticalFlowPyrLK(), (2) cv::cuda::SparsePyrLKOpticalFlow(), and (3) vpiSubmitOpticalFlowPyrLK().
 In order to conveniently describe the following sections, let's define an env var:
 ***OFE_ROOT=~/opt-flow-evaluation***
-## dataset
+## Dataset
 	There are three datasets at $(OFE_ROOT)/dataset folder: car, cars, and street. Each of them has two subfolders:fpt and img, fpt stands for feature points and img for images. For example:
 	$(OFE_ROOT)/dataset/car/img has 100 png files named by their frame number, and 
 	$(OFE_ROOT)/dataset/car/fpt includes the corresponding features points of each images precomputed by cv::goodFeaturesToTrack().
