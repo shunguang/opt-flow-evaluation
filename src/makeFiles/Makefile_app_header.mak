@@ -13,7 +13,7 @@
 
 #build intermediat output paths
 
-APP_ROOT=/home/maven/wus1/opt-flow-evaluation
+APP_ROOT=~/wus1/opt-flow-evaluation
 SDIR_ROOT=$(APP_ROOT)/src
 SDIR_PROJ=$(APP_ROOT)/src/$(PROJ_NAME)
 

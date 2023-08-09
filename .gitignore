@@ -1,9 +1,10 @@
-.bak
+*.bak
 
 # dataset/
 doc/
 ref/
 build/
 .vscode/
+
 
 
