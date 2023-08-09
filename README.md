@@ -28,8 +28,8 @@ In order to easily describe the following sections, let's define an env var:
 	   (1) edit $(OFE_ROOT)/src/makeFiles/Makefile_app_header.mak make sure the env vars match your platform
 	   (2) go into $(OFE_ROOT)/src/makeFiles, then run
 	      $make -f Makefile_util.mak
-	   	  $make -f Makefile_test.mak
-	   The building results will be at 	 $(OFE_ROOT)/build
+	      $make -f Makefile_test.mak
+	   The building results will be at  ***$(OFE_ROOT)/build***
 ## How to run
        (1) cfg files: there are three predefined configuration files at folder
            $(OFE_ROOT)/src/test/cfg
