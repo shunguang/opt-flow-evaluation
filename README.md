@@ -31,11 +31,11 @@ In order to easily describe the following sections, let's define an env var:
 	   	  $make -f Makefile_test.mak
 	   The building results will be at 	 $(OFE_ROOT)/build
 ## How to run
-       (1) cfg files: there there three predefined configuration files at
+       (1) cfg files: there are three predefined configuration files at folder
            $(OFE_ROOT)/src/test/cfg
-           you can edit them before runing it
+           corresponding to the three aforementioned datasets, you can edit them before runing it.
        (2) to run it
-           a) goto $(OFE_ROOT)/build/bin
+           a) goto $(OFE_ROOT)/build/bin, then run
            b) $./test.out ../../src/test/cfg/cfg-opt-flow-car.xml
 ## More info
    goto nvidia developer forum discussion page:  <https://forums.developer.nvidia.com/t/accuracy-of-nv-vpi-sparse-optical-flow-on-orin/262329>
