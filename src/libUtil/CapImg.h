@@ -1,9 +1,7 @@
 #ifndef _CAP_IMG_H_
 #define _CAP_IMG_H_
 
-#include "DataTypes.h"
-#include "AppUtil.h"
-#include "AppLog.h"
+#include "libUtil/util.h""
 namespace app
 {
     class CapImg
@@ -18,6 +16,8 @@ namespace app
         } 
         
         bool getNextFrame( cv::Mat &I );
+        bool rewind();
+        
     private:
         void probe();
 

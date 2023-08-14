@@ -9,21 +9,21 @@ CapImg ::CapImg( const std::string &dir_, const std::string &fileExt_, const boo
 , m_ext(fileExt_)
 , m_isColor(isColor_)
 {
-    dumpLog("CapImg::CapImg(): cap images from folder: %s", m_dir.c_str() );
+    APP_LOG("CapImg::CapImg(): cap images from folder: %s", m_dir.c_str() );
     probe();
-    dumpLog( "isProbeSuccess()=%d", isProbeSuccess());
+    APP_LOG( "isProbeSuccess()=%d", isProbeSuccess());
 }
 
 CapImg :: CapImg( const std::string &videoFile_)
 : m_isFromVideoFile(true)
 , m_videoFile(videoFile_)
 {
-    dumpLog("CapImg::CapImg(): cap image from video file:%s", m_videoFile.c_str() );
+    APP_LOG("CapImg::CapImg(): cap image from video file:%s", m_videoFile.c_str() );
     m_cvCap = std::make_shared<cv::VideoCapture>(videoFile_);
     if (!m_cvCap->isOpened()){
         m_cvCap = nullptr;
         //error in opening the video input
-        dumpLog("CapImg::CapImg(): video file cannot be opened!");
+        APP_LOG("CapImg::CapImg(): video file cannot be opened!");
     }
     else{
       probe();
@@ -53,14 +53,12 @@ bool CapImg::getNextFrame(cv::Mat &I)
 
     std::string curImgFile = m_dir + "/" + m_vImgFileNames[m_nextFrmIdx];
 
-    dumpLog( "curImgFile=%s, m_isColor=%d", curImgFile.c_str(), m_isColor);
+    APP_LOG( "curImgFile=%s, m_isColor=%d", curImgFile.c_str(), m_isColor);
 
     I = cv::imread(curImgFile, m_isColor ? cv::IMREAD_COLOR : cv::IMREAD_COLOR);
     if (I.cols != m_imgW || I.rows != m_imgH){
-      dumpLog("apImg::getNextFrame(): wrong iamge Size");
+      APP_LOG("apImg::getNextFrame(): wrong iamge Size");
     }
-
-    
   }
 
   m_nextFrmIdx++;
@@ -79,12 +77,20 @@ void CapImg::probe()
     m_nTotFrames = getFileNameList( m_dir, m_ext, m_vImgFileNames);
     if( m_nTotFrames > 0 ){
       std::string  curImgFile = m_dir + "/" + m_vImgFileNames[m_nextFrmIdx];
-      dumpLog( "curImgFile=%s\n", curImgFile.c_str());
+      APP_LOG( "curImgFile=%s\n", curImgFile.c_str());
 
       cv::Mat I = cv::imread( curImgFile, m_isColor ? cv::IMREAD_COLOR : cv::IMREAD_GRAYSCALE );
       m_imgW = I.cols;
       m_imgH = I.rows;
     }
   }
-  dumpLog( "CapImg::probe(): m_nTotFrames=%d, m_imgW=%d, m_imgH=%d, m_nextFrmIdx=%d\n", m_nTotFrames, m_imgW, m_imgH, m_nextFrmIdx) ;
+  APP_LOG( "CapImg::probe(): m_nTotFrames=%d, m_imgW=%d, m_imgH=%d, m_nextFrmIdx=%d\n", m_nTotFrames, m_imgW, m_imgH, m_nextFrmIdx) ;
+}
+
+bool CapImg::rewind()
+{
+    if(m_isFromVideoFile && m_cvCap){
+      m_cvCap->set(cv::CAP_PROP_POS_FRAMES, 0);
+    }
+    m_nextFrmIdx = 0;
 }
